@@ -347,7 +347,7 @@ runGenStateT = flip runStateT
 runGenStateT_ :: (RandomGen g, Functor f) => g -> StateT g f a -> f a
 runGenStateT_ g = fmap fst . flip runStateT g
 
--- | This is a wrapper wround pure generator that can be used in an effectful environment.
+-- | This is a wrapper around a pure generator that can be used in an effectful environment.
 -- It is safe in presence of concurrency since all operations are performed atomically.
 --
 -- @since 1.2
